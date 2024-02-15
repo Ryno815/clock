@@ -1,0 +1,105 @@
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    background-image: url('gikis.gif');
+    background-size: 100% 100%; /* Updated */
+    background-position: center;
+}
+
+.container {
+    text-align: center;
+    z-index: 1;
+}
+
+.clock, .date {
+    font-family: Arial, sans-serif;
+}
+
+.clock {
+    font-size: 400px;
+}
+
+.date {
+    font-size: 160px;
+}
+
+.color-selector {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    padding: 10px;
+    background-color: white;
+    border: 1px solid #ccc;
+    display: none;
+    z-index: 2;
+}
+
+.color-selector input[type="color"] {
+    width: 100px;
+    height: 30px;
+}
+
+.font-options {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    padding: 10px;
+    background-color: white;
+    border: 1px solid #ccc;
+    display: none;
+    z-index: 2;
+}
+
+.font-options button {
+    margin: 5px;
+    padding: 5px 10px;
+}
+
+@media screen and (max-width: 2070px) {
+    .clock {
+        font-size: 300px;
+    }
+    
+    .date {
+        font-size: 110px;
+    }
+}
+
+@media screen and (max-width: 1540px) {
+    .clock {
+        font-size: 200px;
+    }
+    
+    .date {
+        font-size: 90px;
+    }
+}
+
+
+@media screen and (max-width: 1030px) {
+    .clock {
+        font-size: 150px;
+    }
+    
+    .date {
+        font-size: 40px;
+    }
+}
+
+@media screen and (max-width: 780px) {
+    .clock {
+        font-size: 90px;
+    }
+    
+    .date {
+        font-size: 20px;
+    }
+}
+
+
+

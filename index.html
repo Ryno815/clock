@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clock</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div id="clock" class="clock"></div>
+        <div id="date" class="date"></div>
+        <div id="colorSelector" class="color-selector">
+            <input type="color" id="fontColor" value="#000000">
+    </div>
+
+    <div id="fontOptions" class="font-options">
+        <button onclick="changeFont('Arial')">Arial</button>
+        <button onclick="changeFont('Times New Roman')">Times New Roman</button>
+        <button onclick="changeFont('Courier New')">Courier New</button>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
