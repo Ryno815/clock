@@ -73,7 +73,7 @@ function showSelectorsOnScroll() {
 
 
 // Update time every second
-setInterval(updateTime, 100);
+setInterval(updateTime, 1);
 
 // Initial call to display the time immediately
 updateTime();
