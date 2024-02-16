@@ -1,11 +1,4 @@
-Username: Ryno815
+Username: ryno815
 Password: HEHEHEHA
 Email: rynoprendo@gmail.com
-Preset 1: Font:  Color: 
-Preset 1: Font:  Color: 
-Preset 1: Font:  Color: 
-Preset 1: Font:  Color: 
-Preset 1: Font:  Color: 
-Preset 1: Font:  Color: 
-Preset 1: Font:  Color: 
-Preset 1: Font:  Color: 
+Font:  Color: 
