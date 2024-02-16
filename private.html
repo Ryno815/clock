@@ -55,26 +55,43 @@
   </div>
 
 
+
+
+
+
   <script>
-    function updateColor() {
-        var fontColorInput = document.getElementById("fontColor");
-        var currentColorInput = document.getElementById("currentColor");
-        currentColorInput.value = fontColorInput.value;
-    }
-  
-    function changeFont(fontName) {
-        var clock = document.getElementById("clock");
-        var date = document.getElementById("date");
-  
-        // Apply font family
-        clock.style.fontFamily = fontName;
-        date.style.fontFamily = fontName;
-  
-        // Set current font value
-        var currentFontInput = document.getElementById("currentFont");
-        currentFontInput.value = fontName;
-    }
-  </script>
+    // Function to handle form submission
+function handleSubmit(event) {
+    // Prevent the default form submission
+    event.preventDefault();
+    
+    // Get the current font and color values
+    var currentFont = document.getElementById("currentFont").value;
+    var currentColor = document.getElementById("currentColor").value;
+    
+    console.log("Current Font:", currentFont);
+    console.log("Current Color:", currentColor);
+    
+    // Update the form with the current font and color values
+    var form = document.querySelector('.preset');
+    form.elements['current_font'].value = currentFont;
+    form.elements['current_color'].value = currentColor;
+    
+    // Submit the form
+    form.submit();
+}
+
+// Add event listener to the form for submitting the form
+document.querySelector('.preset').addEventListener('submit', handleSubmit);
+
+</script>
+
+
+
+
+
+
+
 
 <script>
   // Get the logout link and modal
@@ -114,7 +131,7 @@ logoutBtn.addEventListener("click", function() {
 
 </script>
 
-  <script src="static/script.js"></script>
+<script src="static/script.js"></script>
 </body>
 
 
