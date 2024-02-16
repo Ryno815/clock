@@ -109,7 +109,12 @@ body {
   background-color: #45a049; /* Darker green on hover */
 }
 
-
+.countdown {
+  font-size: 96px; /* Adjust the font size as needed */
+  color: #000000; /* Default color */
+  font-family: Arial, sans-serif; /* Default font family */
+  margin-top: 20px; /* Add some space between the clock and the countdown */
+}
 
 
 
