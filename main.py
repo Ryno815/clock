@@ -81,15 +81,16 @@ def login():
         username = request.form['username']
         password = request.form['password']
         
+     
         with open("nothing.txt", "r") as file:
-          users_data = file.readlines()
-
-        for user_data in users_data:
+          for user_data in file:
             user_info = user_data.strip().split(',')
-            if username == user_info[0] and password == user_info[1]:
-                session['logged_in'] = True
-                session['username']=username
-                return redirect('/')
+            if len(user_info) == 4 and username == user_info[0] and password == user_info[1] and user_info[3] == 'SUCCESS':
+              session['logged_in'] = True
+              session['username'] = username
+              return redirect('/')
+
+
 
         return redirect('/public')
 
@@ -111,9 +112,10 @@ def create():
 
 @app.route('/submit_account', methods=['POST'])
 def submit_account():
-    username = request.form['username']
-    email=request.form['email']
-    password = request.form['password']
+    username = request.form['username'].lower()
+    email = request.form['email'].lower()
+    password = request.form['password'].lower()
+
 
     with open("nothing.txt", "r") as file:
         users_data = file.readlines()
@@ -125,20 +127,19 @@ def submit_account():
               page=f.read()
               f.close()
               return page
-            
 
     verification_code = generate_verification_code()
     session['verification_code'] = verification_code
-    session['username']=username
-    session['email']=email
-    session['password']=password
+    session['username'] = username
+    session['email'] = email
+    session['password'] = password
+
     send_verification_email(email, verification_code)
     print(f"Email sent to {email}")
-   
 
     # Process the submitted data (e.g., store it in a database)
-    f=open("verify.html","r")
-    page=f.read()
+    f = open("verify.html", "r")
+    page = f.read()
     f.close()
     return page
 
@@ -146,29 +147,25 @@ def submit_account():
 
 @app.route('/verify_code', methods=['POST'])
 def verify_code():
-    
     generated_code = session.get('verification_code')
     username = session.get('username')
     email = session.get('email')
     password = session.get('password')
 
-    print (f"Code for {email} is {session['verification_code']}")
+    print(f"Code for {email} is {session['verification_code']}")
 
-   
     generated_code = session.get('verification_code')
 
     submitted_code = request.form.get('verification_code')
     if generated_code != submitted_code:
-        
-        new_user_data = f"{username},{password},{email},NOPE\n"
+        new_user_data = f"{username.lower()},{password},{email.lower()},NOPE\n"
         with open("nothing.txt", "a") as file:
             file.write(new_user_data)
         return redirect('/nope')
-    
-        
+
     new_user_data = f"{username},{password},{email},SUCCESS\n"
     with open("nothing.txt", "a") as file:
-      file.write(new_user_data)
+        file.write(new_user_data)
 
     profiles_dir = os.path.join(os.getcwd(), 'profiles')
     profile_filename = os.path.join(profiles_dir, f"{username}.txt")
@@ -177,7 +174,7 @@ def verify_code():
         file.write(f"Password: {password}\n")
         file.write(f"Email: {email}\n")
 
-    return redirect ('/success')
+    return redirect('/success')
 
 
 
