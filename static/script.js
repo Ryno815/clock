@@ -15,6 +15,7 @@ function updateTime() {
   let hours = now.getHours();
   const minutes = now.getMinutes().toString().padStart(2, '0');
   const seconds = now.getSeconds().toString().padStart(2, '0');
+  const milliseconds = now.getMilliseconds().toString().padStart(3, '0');
   let timeOfDay = 'AM';
 
   if (hours >= 12) {
@@ -27,7 +28,7 @@ function updateTime() {
 
   hours = hours === 0 ? 12 : hours;
 
-  const timeString = `${hours}:${minutes}:${seconds} ${timeOfDay}`;
+  const timeString = `${hours}:${minutes}:${seconds}.${milliseconds} ${timeOfDay}`;
   const dateString = `${dayOfWeek}, ${month} ${day}`;
 
   const fontColor = document.getElementById('fontColor').value;
@@ -72,7 +73,7 @@ function showSelectorsOnScroll() {
 
 
 // Update time every second
-setInterval(updateTime, 250);
+setInterval(updateTime, 100);
 
 // Initial call to display the time immediately
 updateTime();
