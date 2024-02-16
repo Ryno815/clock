@@ -30,6 +30,7 @@ function updateTime() {
 
   const timeString = `${hours}:${minutes}:${seconds}.${milliseconds} ${timeOfDay}`;  
   const dateString = `${dayOfWeek}, ${month} ${day}`;
+  const countdownString=`Countdown to Break: ${hours}:${minutes}:${seconds}.${milliseconds}`;
 
   const fontColor = document.getElementById('fontColor').value;
   document.getElementById('clock').textContent = timeString;
