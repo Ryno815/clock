@@ -34,8 +34,10 @@ function updateTime() {
   const fontColor = document.getElementById('fontColor').value;
   document.getElementById('clock').textContent = timeString;
   document.getElementById('date').textContent = dateString;
+  document.getElementById('countdown').textContent = countdownString;
   document.getElementById('clock').style.color = fontColor;
   document.getElementById('date').style.color = fontColor;
+  document.getElementById('countdown').style.color = fontColor;
 
   document.title = timeString;
 
