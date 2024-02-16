@@ -73,10 +73,14 @@ function updateCountdown() {
 function changeFont(fontName) {
   const clock = document.getElementById('clock');
   const date = document.getElementById('date');
+  const countdown = document.getElementById('countdown'); // Add this line to get the countdown element
+
 
   // Apply font family
   clock.style.fontFamily = fontName;
   date.style.fontFamily = fontName;
+  countdown.style.fontFamily = fontName; // Apply font family to the countdown element
+
 
   // Reset font sizes to pre-determined values in CSS
   clock.style.fontSize = ''; // Reset to CSS default
