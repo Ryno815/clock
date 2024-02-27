@@ -7,7 +7,7 @@ import os
 
 
 app = Flask(__name__)
-app.secret_key = 'HEHEHEHAHEHEHEHA'
+app.secret_key = 'HEHEHEHAHEHEHEHA' #Make sure put this in os environmental and put it into site using
 
 
 
@@ -17,8 +17,8 @@ def generate_verification_code():
 
 def send_verification_email(email, verification_code):
     # Email configurations
-    sender_email = 'gikisclock@gmail.com'  # Update with your email address
-    sender_password = 'pctadtawbvdmqfxr'  # Update with your email password
+    sender_email = 'gikisclock@gmail.com'  #Make sure put this in os environmental and put it into site using
+    sender_password = 'pctadtawbvdmqfxr'  #Make sure put this in os environmental and put it into site using
     smtp_server = 'smtp.gmail.com'  # Update with your SMTP server address
     smtp_port = 587  # Update with your SMTP port number
 
